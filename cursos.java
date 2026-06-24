@@ -276,6 +276,7 @@ CALL sp_gerar_snapshot_rendimento();
 SELECT * FROM relatorio_rendimento;
 
 -- TESTE 5: Validação de Reatividade Dinâmica
+DELETE FROM MatriculaWHERE id_aluno IN (SELECT id_alunoFROM AlunoWHERE email = 'validador@gmail.com');
 DELETE FROM Aluno WHERE email = "validador@gmail.com";
 INSERT INTO Aluno(nome, email, dt_nascimento) VALUES ("Aluno Validador", "validador@gmail.com", "2000-01-01");
 INSERT INTO Matricula(id_aluno, data_matricula, id_turma, nota) 
